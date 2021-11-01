@@ -1,0 +1,12 @@
+-------------------------------------------------------------------------------
+Test set: one.digitalinnovation.personapi.controller.PersonControllerTest
+-------------------------------------------------------------------------------
+Tests run: 6, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 1.601 s <<< FAILURE! - in one.digitalinnovation.personapi.controller.PersonControllerTest
+testWhenPOSTIsCalledThenAPersonShouldBeCreated  Time elapsed: 0.254 s  <<< FAILURE!
+java.lang.AssertionError: Status expected:<201> but was:<400>
+	at one.digitalinnovation.personapi.controller.PersonControllerTest.testWhenPOSTIsCalledThenAPersonShouldBeCreated(PersonControllerTest.java:62)
+
+testWhenPUTIsCalledThenAPersonShouldBeUpdated  Time elapsed: 0.067 s  <<< FAILURE!
+java.lang.AssertionError: Status expected:<200> but was:<400>
+	at one.digitalinnovation.personapi.controller.PersonControllerTest.testWhenPUTIsCalledThenAPersonShouldBeUpdated(PersonControllerTest.java:123)
+

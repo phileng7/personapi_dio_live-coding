@@ -1,0 +1,6 @@
+one\digitalinnovation\personapi\PersonApiMasterApplicationTests.class
+one\digitalinnovation\personapi\service\PersonServiceTest.class
+one\digitalinnovation\personapi\controller\PersonControllerTest.class
+one\digitalinnovation\personapi\mapper\PersonMapperTest.class
+one\digitalinnovation\personapi\utils\PhoneUtils.class
+one\digitalinnovation\personapi\utils\PersonUtils.class
