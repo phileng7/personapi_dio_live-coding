@@ -17,8 +17,8 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2021-11-01T13:15:48-0300",
-    comments = "version: 1.4.1.Final, compiler: Eclipse JDT (IDE) 1.3.1300.v20210419-1022, environment: Java 16.0.1 (Oracle Corporation)"
+    date = "2021-11-01T13:21:03-0300",
+    comments = "version: 1.4.1.Final, compiler: javac, environment: Java 16.0.1 (Oracle Corporation)"
 )
 @Component
 public class PersonMapperImpl implements PersonMapper {
@@ -34,10 +34,10 @@ public class PersonMapperImpl implements PersonMapper {
         if ( personDTO.getBirthDate() != null ) {
             person.birthDate( LocalDate.parse( personDTO.getBirthDate(), DateTimeFormatter.ofPattern( "dd-MM-yyyy" ) ) );
         }
-        person.cpf( personDTO.getCpf() );
-        person.firstName( personDTO.getFirstName() );
         person.id( personDTO.getId() );
+        person.firstName( personDTO.getFirstName() );
         person.lastName( personDTO.getLastName() );
+        person.cpf( personDTO.getCpf() );
         person.phones( phoneDTOListToPhoneList( personDTO.getPhones() ) );
 
         return person.build();
@@ -51,13 +51,13 @@ public class PersonMapperImpl implements PersonMapper {
 
         PersonDTOBuilder personDTO = PersonDTO.builder();
 
+        personDTO.id( person.getId() );
+        personDTO.firstName( person.getFirstName() );
+        personDTO.lastName( person.getLastName() );
+        personDTO.cpf( person.getCpf() );
         if ( person.getBirthDate() != null ) {
             personDTO.birthDate( DateTimeFormatter.ISO_LOCAL_DATE.format( person.getBirthDate() ) );
         }
-        personDTO.cpf( person.getCpf() );
-        personDTO.firstName( person.getFirstName() );
-        personDTO.id( person.getId() );
-        personDTO.lastName( person.getLastName() );
         personDTO.phones( phoneListToPhoneDTOList( person.getPhones() ) );
 
         return personDTO.build();
@@ -71,8 +71,8 @@ public class PersonMapperImpl implements PersonMapper {
         PhoneBuilder phone = Phone.builder();
 
         phone.id( phoneDTO.getId() );
-        phone.number( phoneDTO.getNumber() );
         phone.type( phoneDTO.getType() );
+        phone.number( phoneDTO.getNumber() );
 
         return phone.build();
     }
@@ -98,8 +98,8 @@ public class PersonMapperImpl implements PersonMapper {
         PhoneDTOBuilder phoneDTO = PhoneDTO.builder();
 
         phoneDTO.id( phone.getId() );
-        phoneDTO.number( phone.getNumber() );
         phoneDTO.type( phone.getType() );
+        phoneDTO.number( phone.getNumber() );
 
         return phoneDTO.build();
     }
